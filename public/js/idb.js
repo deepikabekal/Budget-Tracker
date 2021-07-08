@@ -37,14 +37,14 @@ function saveRecord (record) {
 }
 
 function uploadBudgetItem() {
-    const transaction = db.transaction(['new_budget', 'readwrite']);
+    const transaction = db.transaction(['new_budget'], 'readwrite');
     const budgetObjectStore = transaction.objectStore('new_budget');
     const getAll = budgetObjectStore.getAll();
 
     getAll.onsuccess = function() {
         if (getAll.result.length > 0)
         {
-            fetch('/api/transaction/bulk', {
+            fetch('/api/transaction', {
                 method : 'POST', 
                 body : JSON.stringify(getAll.result),
                 headers : {
@@ -66,7 +66,7 @@ function uploadBudgetItem() {
                 const budgetObjectStore = transaction.objectStore('new_budget');
 
                 //clear all items in your store
-                pizzaObjectStore.clear();
+                budgetObjectStore.clear();
 
                 alert('All saved records has been submitted');
             })
