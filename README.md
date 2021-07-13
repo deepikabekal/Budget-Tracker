@@ -16,7 +16,7 @@ An application where the user will be able to add expenses and deposits to their
 https://budget-tracker-pwa-2021.herokuapp.com/
 
 ## Screenshot
-<img src="public/images/Budget-Tracker.png" width=200 height = 200>
+<img src="public/images/Budget-Tracker.png" width=500 height = 500>
 
 ## Technologies Used
 * Node.js
